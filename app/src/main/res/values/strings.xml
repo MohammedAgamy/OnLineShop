@@ -1,3 +1,8 @@
 <resources>
-	<string name="app_name">OnlineShop</string>
+    <string name="app_name">OnlineShop</string>
+    <string name="title_intro">Step Into Your <font color="#6033ba">Style \n A World Of Shoes </font></string>
+    <string name="intro_text">Browse The latest styles from tob brands\n Get personalized \n Enjoy fast ,free shipping  </string>
+    <string name="lets_get_started">Lets Get Started</string>
+    <string name="singIn">Already have an account? <font color="#6033ba">SignIn </font></string>
+
 </resources>
