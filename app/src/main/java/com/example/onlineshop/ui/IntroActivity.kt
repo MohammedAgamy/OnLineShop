@@ -1,11 +1,7 @@
-package com.example.onlineshop
+package com.example.onlineshop.ui
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.onlineshop.databinding.ActivityIntroBinding
 
 class IntroActivity : BaseActivity() {
@@ -17,7 +13,7 @@ class IntroActivity : BaseActivity() {
 
 
         binding.introBtn.setOnClickListener {
-            startActivity(Intent(this@IntroActivity,MainActivity::class.java))
+            startActivity(Intent(this@IntroActivity, MainActivity::class.java))
         }
 
     }

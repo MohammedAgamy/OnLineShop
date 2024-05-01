@@ -13,11 +13,11 @@
         android:theme="@style/Theme.OnlineShop"
         tools:targetApi="31">
         <activity
-            android:name=".BaseActivity"
+            android:name=".ui.BaseActivity"
             android:exported="false"
             android:theme="@style/Theme.OnlineShop" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".ui.IntroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false">
 
         </activity>

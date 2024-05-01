@@ -54,5 +54,6 @@
     <string name="explorer">Explorer</string>
     <string name="car">Car</string>
     <string name="wishlist">WishList</string>
+    <string name="title">title</string>
 
 </resources>
