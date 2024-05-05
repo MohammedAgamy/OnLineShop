@@ -6,11 +6,14 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
+    android:id="@+id/linearBrand"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_marginEnd="16sp">
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageBrand"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_weight="1"
@@ -18,7 +21,7 @@
         tools:srcCompat="@drawable/gray_bg" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/titelBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

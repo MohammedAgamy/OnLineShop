@@ -57,4 +57,6 @@ class SliderAdapter(private var sliderItems:List<SliderModel>,private val viewPA
                 .into(imageSlider)
         }
     }
+
+
 }
