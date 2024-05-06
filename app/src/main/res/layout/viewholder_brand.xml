@@ -7,7 +7,6 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="8dp"
     android:id="@+id/linearBrand"
-    android:orientation="vertical"
     android:gravity="center"
     android:layout_marginEnd="16sp">
 
@@ -18,13 +17,13 @@
         android:layout_height="45dp"
         android:layout_weight="1"
         android:padding="2dp"
-        tools:srcCompat="@drawable/gray_bg" />
+       android:src="@drawable/gray_bg" />
 
     <TextView
         android:id="@+id/titelBrand"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_vertical"
         android:layout_marginEnd="8dp"
         android:layout_weight="1"
         android:text="@string/title"

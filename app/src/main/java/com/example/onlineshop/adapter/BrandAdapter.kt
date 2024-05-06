@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.onlineshop.R
 import com.example.onlineshop.model.BrandModel
-import com.example.onlineshop.model.SliderModel
 
 class BrandAdapter (var brandItems:List<BrandModel>): RecyclerView.Adapter<BrandAdapter.MyBrandViHolder>()  {
 
@@ -37,7 +36,7 @@ class BrandAdapter (var brandItems:List<BrandModel>): RecyclerView.Adapter<Brand
             .load(item.picUrl)
             .into(holder.imageBrand)
 
-        holder.itemView.setOnClickListener {
+        holder.linearBrand.setOnClickListener {
             lastPosition =selectPosition
             selectPosition=position
             notifyItemChanged(lastPosition)
@@ -47,7 +46,7 @@ class BrandAdapter (var brandItems:List<BrandModel>): RecyclerView.Adapter<Brand
         holder.titel.setTextColor(context.resources.getColor(R.color.white))
         if (selectPosition==position)
         {
-            holder.imageBrand.setBackgroundColor(0)
+            holder.imageBrand.setBackgroundResource(0)
             holder.linearBrand.setBackgroundResource(R.color.purple)
             ImageViewCompat.setImageTintList(holder.imageBrand, ColorStateList.valueOf(context.getColor(R.color.white)))
             holder.titel.visibility =View.VISIBLE
@@ -55,7 +54,7 @@ class BrandAdapter (var brandItems:List<BrandModel>): RecyclerView.Adapter<Brand
 
         else{
 
-            holder.imageBrand.setBackgroundColor(R.drawable.gray_bg)
+            holder.imageBrand.setBackgroundResource(R.drawable.gray_bg)
             holder.linearBrand.setBackgroundResource(0)
             ImageViewCompat.setImageTintList(holder.imageBrand, ColorStateList.valueOf(context.getColor(R.color.black)))
             holder.titel.visibility =View.GONE
