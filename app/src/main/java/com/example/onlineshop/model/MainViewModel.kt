@@ -18,6 +18,9 @@ class MainViewModel:ViewModel() {
     private val _brand =MutableLiveData<MutableList<BrandModel>>()
     val brandLiveData:LiveData<MutableList<BrandModel>> = _brand
 
+    private val _popuplar =MutableLiveData<MutableList<ItemsModel>>()
+    val popuplarLiveData:LiveData<MutableList<ItemsModel>> = _popuplar
+
     fun loadBanner()
     {
         val ref=firebaseDatabase.getReference("Banner")
@@ -57,6 +60,31 @@ class MainViewModel:ViewModel() {
                         lists.add(list)
                     }
                     _brand.value =lists
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.e("TAGError",error.toString())
+            }
+
+        })
+
+    }
+
+    fun loadPopular()
+    {
+        val ref=firebaseDatabase.getReference("Items")
+        ref.addValueEventListener(object :ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val lists = mutableListOf<ItemsModel>()
+                for (childSnapshot in snapshot.children)
+                {
+                    val list =childSnapshot.getValue(ItemsModel::class.java)
+                    if (list != null)
+                    {
+                        lists.add(list)
+                    }
+                    _popuplar.value =lists
                 }
             }
 

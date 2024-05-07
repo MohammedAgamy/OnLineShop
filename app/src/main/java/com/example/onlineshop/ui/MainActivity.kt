@@ -1,17 +1,17 @@
 package com.example.onlineshop.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.onlineshop.R
 import com.example.onlineshop.adapter.BrandAdapter
+import com.example.onlineshop.adapter.PopularAdapter
 import com.example.onlineshop.adapter.SliderAdapter
 import com.example.onlineshop.databinding.ActivityMainBinding
 import com.example.onlineshop.model.BrandModel
@@ -28,6 +28,7 @@ class MainActivity : BaseActivity() {
 
         iniBanner()
         iniBrand()
+        iniPopular()
 
 
     }
@@ -68,9 +69,21 @@ class MainActivity : BaseActivity() {
         binding.progressBar.visibility =View.VISIBLE
         mainViewModel.brandLiveData.observe(this, Observer {items ->
             binding.recyclerBrand.layoutManager =LinearLayoutManager(this@MainActivity,LinearLayoutManager.HORIZONTAL,false)
-            binding.recyclerBrand.adapter=BrandAdapter(items)
+            binding.recyclerBrand.adapter= BrandAdapter(items)
             binding.progressBar.visibility=View.GONE
         })
         mainViewModel.loadBrand()
+    }
+
+
+    private fun iniPopular()
+    {
+        binding.progressBarPopular.visibility =View.VISIBLE
+        mainViewModel.popuplarLiveData.observe(this, Observer {items ->
+            binding.recPopular.layoutManager =GridLayoutManager(this@MainActivity,2)
+            binding.recPopular.adapter=PopularAdapter(items)
+            binding.progressBarPopular.visibility=View.GONE
+        })
+        mainViewModel.loadPopular()
     }
 }
