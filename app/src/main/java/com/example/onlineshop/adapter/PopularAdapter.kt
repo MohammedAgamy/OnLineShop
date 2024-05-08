@@ -1,5 +1,6 @@
 package com.example.onlineshop.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -8,6 +9,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.request.RequestOptions
 import com.example.onlineshop.databinding.ViewholderRecommendedBinding
 import com.example.onlineshop.model.ItemsModel
+import com.example.onlineshop.ui.DetailActivity
 
 class PopularAdapter(var brandItems: MutableList<ItemsModel>) :
     RecyclerView.Adapter<PopularAdapter.MyPopularViHolder>() {
@@ -36,6 +38,12 @@ class PopularAdapter(var brandItems: MutableList<ItemsModel>) :
             .load(brandItems[position].picUrl[0])
             .apply(requestOption)
             .into(holder.binding.picRecommend)
+
+        holder.itemView.setOnClickListener {
+            val intent= Intent(holder.itemView.context,DetailActivity::class.java)
+            intent.putExtra("object", brandItems[position])
+            holder.itemView.context.startActivity(intent)
+        }
 
     }
 
