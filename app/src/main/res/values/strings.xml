@@ -56,5 +56,6 @@
     <string name="wishlist">WishList</string>
     <string name="title">title</string>
     <string name="select_size">Select Size</string>
+    <string name="your_car_is_empty">Your Car is Empty</string>
 
 </resources>
