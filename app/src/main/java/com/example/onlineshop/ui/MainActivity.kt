@@ -1,5 +1,6 @@
 package com.example.onlineshop.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
@@ -29,9 +30,16 @@ class MainActivity : BaseActivity() {
         iniBanner()
         iniBrand()
         iniPopular()
+        iniBottomNav()
+
 
 
     }
+
+    private fun iniBottomNav() {
+        startActivity(Intent(this@MainActivity,CartActivity::class.java))
+    }
+
     private fun iniBanner() {
         binding.prograsBarSlider.visibility=View.VISIBLE
         mainViewModel.banners.observe(this , Observer { items ->

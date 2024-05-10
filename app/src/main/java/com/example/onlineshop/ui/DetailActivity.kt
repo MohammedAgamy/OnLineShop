@@ -1,5 +1,6 @@
 package com.example.onlineshop.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -88,7 +89,7 @@ class DetailActivity : BaseActivity() {
         }
         binding.backBtn.setOnClickListener { finish() }
         binding.carBtn.setOnClickListener {
-
+            startActivity(Intent(this@DetailActivity,CartActivity::class.java))
         }
     }
 }

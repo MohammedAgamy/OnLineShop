@@ -45,6 +45,8 @@ class PopularAdapter(var brandItems: MutableList<ItemsModel>) :
             holder.itemView.context.startActivity(intent)
         }
 
+
+
     }
 
 
